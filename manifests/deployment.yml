@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: "clu-154e"
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: "clu-154e"
+  template:
+    metadata:
+      labels:
+        app: "clu-154e"
+    spec:
+      containers:
+        - name: "clu-154e"
+          image: "regsd.azurecr.io/clu"
+          ports:
+          - containerPort: 80
